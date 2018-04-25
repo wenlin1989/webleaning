@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--外部的字体链接 -->
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+<!--
+    页面的css可以有三种方式用于页面的相关元素：
+    1. .name{... }   可以在页面元素的class属性中进行这个name的引用即可
+    2. h2 {... }   直接对某一种页面元素做css的设置，此时页面中的所有该类元素均会生效
+    3. #name2{... }  可以在页面元素的id属性中进行这个name2的引用即可
+-->
+<style>
+
+    .red-text {
+        color: red;
+    }
+
+    h2 {
+        font-family: Lobster, Monospace;
+    }
+
+    p {
+        font-size: 16px;
+        font-family: Monospace;
+    }
+
+    .thick-green-border {
+        border-color: green;
+        border-width: 10px;
+        border-style: solid;
+        border-radius: 50%;
+    }
+
+    .smaller-image {
+        width: 100px;
+    }
+
+    .silver-background {
+        background-color: silver;
+    }
+
+    #cat-photo-form {
+        background-color: green;
+    }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+
+<!--# 说明这里用了一个"死链接"，当鼠标移动到此处时会变更为超链接的手势但是点击后不会进行跳转-->
+<p>Click here for <a href="#">cat photos</a>.</p>
+
+<!--在img中alt是在src中的图片无法展示时给出的文案提示-->
+<a href="#"><img class="smaller-image thick-green-border" alt="A cute orange cat lying on its back. " src="https://bit.ly/fcc-relaxing-cat"></a>
+
+<!--div定义了一个区块，ul为无序列表，ol为有序列表-->
+<div class="silver-background">
+    <p>Things cats love:</p>
+    <ul>
+        <li>cat nip</li>
+        <li>laser pointers</li>
+        <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+        <li>flea treatment</li>
+        <li>thunder</li>
+        <li>other cats</li>
+    </ol>
+</div>
+
+<form action="/submit-cat-photo" id="cat-photo-form">
+    <!--radio 是单选，checkbox是复选；
+        1. 通过name来判断元素属于哪种类型，是属于哪一个选择器
+        2. checked 属性说明该元素是被默认选中的那一个-->
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label>
+    <!--输入框： placeholder是未输入前的默认展示说明 ； required说明该输入框是必填项-->
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
