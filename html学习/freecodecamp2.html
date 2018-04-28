@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+CSS 边距属性 (margin 边距) 是用来设置一个元素所占空间的边缘到相邻元素之间的距离。
+
+CSS 边框属性 (border 边框) 用来设定一个元素的边线。
+
+CSS 间隙属性 (padding 间隙) 是用来设置元素内容到元素边框的距离。
+-->
+
+<style>
+    .injected-text {
+        margin-bottom: -25px;
+        text-align: center;
+    }
+
+    .box {
+        border-style: solid;
+        border-color: black;
+        border-width: 5px;
+        text-align: center;
+    }
+
+    .yellow-box {
+        background-color: yellow;
+        padding: 20px 40px 20px 40px;
+    }
+
+    .red-box {
+        background-color: red;
+        margin: 20px 40px 20px 40px;
+    }
+
+    .green-box {
+        background-color: green;
+        margin: 40px 20px 20px 40px;
+    }
+</style>
+
+<h5 class="injected-text">margin</h5>
+<div class="box yellow-box">
+    <h5 class="box red-box">padding</h5>
+    <h5 class="box green-box">padding</h5>
+</div>
+
+
+</body>
+</html>
