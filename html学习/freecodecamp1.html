@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>html session 1 </title>
 </head>
 <body>
 
@@ -14,11 +14,24 @@
     1. .name{... }   可以在页面元素的class属性中进行这个name的引用即可
     2. h2 {... }   直接对某一种页面元素做css的设置，此时页面中的所有该类元素均会生效
     3. #name2{... }  可以在页面元素的id属性中进行这个name2的引用即可
+    4. body 直接对整个html中body部分内容生效，无需再次引用
 -->
 <style>
 
+    body {
+        background-color : black;
+    }
+
+    #orange-text {
+       color:orange;
+    }
+
     .red-text {
-        color: red;
+        color: red !important;
+    }
+
+    .blue-text {
+        color: blue;
     }
 
     h2 {
@@ -50,7 +63,13 @@
     }
 </style>
 
-<h2 class="red-text">CatPhotoApp</h2>
+<!--
+ css中声明的优先级：
+ 1. 在red-text 不增加"！important"前，优先级顺序(由高到低)：white - orange - blue - red ,其中由于blue在style中的声明在red之后所以优先级高于red
+ 2. 在red-text 增加了"!important"后，优先级顺序(由高到低)：red - white - orange - blue， 含有!improtant属性的拥有最高优先级
+-->
+
+<h2 id = "orange-text" class="blue-text red-text " style="color : white">CatPhotoApp</h2>
 
 <!--# 说明这里用了一个"死链接"，当鼠标移动到此处时会变更为超链接的手势但是点击后不会进行跳转-->
 <p>Click here for <a href="#">cat photos</a>.</p>
