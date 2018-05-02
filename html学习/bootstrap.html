@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 加入bootstrap框架 -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<!-- 加入font-awesome 图标库，库中均为矢量图标，.svg格式的图片-->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<!-- link中的内容表示已经加载了Bootstrap（响应式前端框架） -->
+<!-- link中的内容表示已经加载了谷歌字体 -->
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <style>
 
@@ -35,20 +39,31 @@
     }*/
 </style>
 
+<!--
+ container类所谓的自适应也是通过margin的改变来完成，container-fluid类的百分百宽度是指在固有的15px的padding前提下宽度总是当前视口的宽度。
+-->
 <div class="container-fluid">
-    <!--
-    1. text-center 是bootstrap中让文案居中
-    2. 用text-primary代替 red-text给标题改字体颜色
-    -->
-    <h2 class="text-primary text-center">CatPhotoApp</h2>
+
+    <!--Bootstrap使用一个响应式网格系统，它可以很容易地将元素放入行并指定每个元素的相对宽度。 Bootstrap的大多数类可以应用于div元素 -->
+    <div class="row">
+        <!-- xs指定表格大小，4/8 指定一格的宽度为几个指定宽度-->
+        <div class="col-xs-8">
+            <!--
+                 1. text-center 是bootstrap中让文案居中
+                 2. 用text-primary代替 red-text给标题改字体颜色
+            -->
+            <h2 class="text-primary text-center">CatPhotoApp</h2>
+        </div>
+        <div class="col-xs-4">
+            <!--
+                1. img-responsive 是bootstrap中可以让图片自适应屏幕宽度的class
+                2. 用img-responsive代替之前的small-image让图片自适应屏幕宽度
+            -->
+            <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back. "></a>
+        </div>
+    </div>
 
     <p>Click here for <a href="#">cat photos</a>.</p>
-
-    <!--
-    1. img-responsive 是bootstrap中可以让图片自适应屏幕宽度的class
-    2. 用img-responsive代替之前的small-image让图片自适应屏幕宽度-->
-    <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back. "></a>
-
     <img class = "img-responsive" src = "https://bit.ly/fcc-running-cats">
     <!--btn是bootstrap的按钮样式：
     1. btn-block是button是全宽度的
@@ -56,15 +71,16 @@
     3. btn-info提示是用户可做的额外操作
     4. btn-danger表示该button的操作可能存在风险，需谨慎-->
     <div class="row">
-        <!-- xs指定表格大小，4 指定表格的列数-->
+
         <div class="col-xs-4">
-            <button class="btn btn-block btn-primary">Like</button>
+            <!-- i元素最初是用于"斜体"，在font-awesome中可将class用于i将所包含的内容变更为icon -->
+            <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up">Like</i></button>
         </div>
         <div class="col-xs-4">
-            <button class="btn btn-block btn-info">Info</button>
+            <button class="btn btn-block btn-info"><i class="fa fa-info-circle">Info</i></button>
         </div>
         <div class="col-xs-4">
-            <button class="btn btn-block btn-danger">Delete</button>
+            <button class="btn btn-block btn-danger"><i class="fa fa-trash">Delete</i></button>
         </div>
     </div>
 
@@ -83,14 +99,37 @@
         <li>thunder</li>
         <li>other cats</li>
     </ol>
+    <!-- col-xs-* 同样适用于form表单中的元素 -->
     <form action="/submit-cat-photo">
-        <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-        <label><input type="checkbox" name="personality"> Loving</label>
-        <label><input type="checkbox" name="personality"> Lazy</label>
-        <label><input type="checkbox" name="personality"> Crazy</label>
-        <input type="text" placeholder="cat photo URL" required>
-        <button type="submit">Submit</button>
+        <div class="row">
+            <div class="col-xs-6">
+                <label><input type="radio" name="indoor-outdoor"> Indoor</label>  <!--radio button 单选项-->
+            </div>
+            <div class="col-xs-6">
+                <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <label><input type="checkbox" name="personality"> Loving</label> <!--checkbox button 复选项-->
+            </div>
+            <div class="col-xs-4">
+                <label><input type="checkbox" name="personality"> Lazy</label>
+            </div>
+            <div class="col-xs-4">
+                <label><input type="checkbox" name="personality"> Crazy</label>
+            </div>
+        </div>
+        <!--将输入框 与 提交按钮 展示在一排-->
+        <div class="row">
+            <div class="col-xs-7">
+                <input type="text" class="form-control" placeholder="cat photo URL" required>
+            </div>
+            <div class="col-xs-5">
+                <!--高亮 + 图标 -->
+                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
+            </div>
+        </div>
     </form>
 </div>
 
