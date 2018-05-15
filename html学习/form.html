@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单</title>
+</head>
+<body>
+
+<!--
+    form标签表示"表单"
+ 1. 表单的所有内容需要在form标签之间，form只是指定了一个区域而已本身并不可见
+ 2. input用来插入表单元素  <input type="类型属性" name="名称" ... />
+ 3. placeholder是在未输入前用于提示的文案随着输入而消失；value是默认初始化好的文本值，在重置后或者输入新内容时依然存在
+ 4. button/submit/reset等按钮的value值可以用于显示按钮的名称
+ 5. image的src指定图片的地址，图片的功能是"点击后可以提交"类似于submit
+ 6. hidden隐藏域，是用户看不到的，value可以根据提交一起传给后端
+-->
+<H1 align="center">注册信息</H1>
+<hr color="#336699">  <!--水平线-->
+<form>
+    <table width="600px" bgcolor="#f2f2f2" align="center">
+        <tr>
+            <td align="right">
+                姓名：
+            </td>
+            <td>
+                <!--maxlength是指最长能够输入的长度-->
+                <input type="text" name="username" placeholder="请输入姓名" size="25" maxlength="64"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                邮箱：
+            </td>
+            <td>
+                <input type="email" name="mail" value="@163.com" size="25" maxlength="64"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                密码：
+            </td>
+            <td>
+                <input type="password" name="psw" placeholder="请输入密码" size="25" maxlength="64"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+               确认密码：
+            </td>
+            <td>
+                <input type="password" name="ensurepsw" placeholder="请再次输入密码" size="25" maxlength="64"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+               上传照片：
+            </td>
+            <td>
+                <input type="file" name="photo">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                性别：
+            </td>
+            <td>
+                <!--
+                    1.checked 表示默认选中 ； 通过name来进行单选框的元素进行标记
+                    2.radio中的value值用于提交后给后台传入到底选择的是什么内容-->
+                男 <input type="radio" name="sex" value="man" checked>
+                女 <input type="radio" name="sex" value="woman">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                爱好：
+            </td>
+            <td>
+                读书<input type="checkbox" name="interest" value="read" checked/>
+                跳舞<input type="checkbox" name="interest" value="dance"/>
+                唱歌<input type="checkbox" name="interest" value="sing"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" name="click" value=" 来点我 "/>
+                <input type="submit" name="submit" value="提 交"/>
+                <input type="reset" name="reset" value="重 置"/>
+                <input type="image" src="../resource/图标1.png"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="hidden" name="hidden" value="这是一个用户注册信息">
+            </td>
+            <td>
+
+            </td>
+        </tr>
+
+    </table>
+</form>
+
+
+</body>
+</html>
