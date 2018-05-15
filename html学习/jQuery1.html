@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-one</title>
+    <!--引入jquery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+</head>
+<script type="text/javascript">
+    /*
+    1. 若没有document.ready功能，则script中内容将会在html加载完成前执行而导致bug出现
+    2. jquery的方法一般是以$符号开头
+    3. 选择器中的元素名必须是双引号，且可以使用type进行元素选取 —— "button"
+    4. 使用class进行元素选取时，需要加. ---".well"
+    5. 用addClass为属性增加方法/操作/特性
+    6. 使用id进行元素选取时，需要在id前加# --- "#target3"
+    */
+    $(document).ready(function() {
+        $(document).ready(function() {
+            $("button").addClass("animated bounce");
+            $(".well").addClass("animated shake");
+            $("#target3").addClass("animated fadeOut");
+            <!--去掉元素上的某个特性-->
+            $("button").removeClass("btn-default");
+            <!--用jquery更改元素的css属性，其中color和red中间是"，"而非"："-->
+            $("#target1").css("color","red");
+            <!--prop可以用来改变元素的属性，以下语句是将id为target1的button进行置灰操作，即不可点击-->
+            $("#target1").prop("disabled",true);
+            <!--html可以在元素中增加任何HTML的属性和文本 -->
+            $("#target4").html("<em>#target4</em>");
+            <!--用remove将元素干掉-->
+            $("#target5").remove();
+            <!--appendTo: 将一个元素从一个div转移至另一个div-->
+            $("#target2").appendTo("#right-well");
+            <!--clone: 将一个元素copy一份到另一个div中去-->
+            $("#target5").clone().appendTo("#left-well");
+            <!--parent: 将一个元素的父元素进行属性定义（即上一层嵌套）-->
+            $("#target1").parent().css("background-color","red");
+            <!--children: 将一个元素的子元素进行属性定义（即下一层嵌套）-->
+            $("#right-well").children().css("background-color","orange");
+            <!--nth-child(n): 对所有含有"target"的class的元素的第二个子元素进行属性定义-->
+            $(".target:nth-child(2)").addClass("animated bounce");
+            <!--even(偶数)/odd(奇数): 对所有含有"target"的class的元素的偶数/奇数个元素进行属性定义，jquery的索引是从0开始的，即偶数索引为"第一个，第三个，第五个"-->
+            $(".target:even").addClass("animated shake");
+            <!--jquery也可以直接对html的body中的所有元素进行操作-->
+            $("body").addClass("animated hinge");
+
+
+
+
+        });
+    });
+</script>
+<body>
+<div class="container-fluid">
+    <h3 class="text-primary text-center">jQuery Playground</h3>
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>#left-well</h4>
+            <div class="well" id="left-well">
+                <button class="btn btn-default target" id="target1">#target1</button>
+                <button class="btn btn-default target" id="target2">#target2</button>
+                <button class="btn btn-default target" id="target3">#target3</button>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <h4>#right-well</h4>
+            <div class="well" id="right-well">
+                <button class="btn btn-default target" id="target4">#target4</button>
+                <button class="btn btn-default target" id="target5">#target5</button>
+                <button class="btn btn-default target" id="target6">#target6</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

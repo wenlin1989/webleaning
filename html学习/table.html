@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格 table</title>
+</head>
+<body>
+    <!--table是表格的开始；tr是行标签；td是单元格(默认左对齐)；th是表格头（内容居中+加粗显示）;
+     caption是表格的标题（居中显示，要在table之后，每个表格有且仅有一个）
+     -->
+    <!--
+        "表格的嵌套"必须将整个table结构完整放在<td>标签内
+    -->
+    <table border="1" cellspacing="0">
+        <tr>
+            <td>2014</td>
+            <td>2015</td>
+            <td>2016</td>
+        </tr>
+        <tr>
+            <td>
+                <table border="1" cellspacing="0">
+                    <tr>
+                        <td>上半年</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <td>下半年</td>
+                        <td>7000</td>
+                    </tr>
+                </table>
+            </td>
+            <td>10000</td>
+            <td>12000</td>
+        </tr>
+    </table>
+    <br>
+
+    <!--thead表格的头（放标题类内容） ;tbody 表格主体 ;tfoot 表格的脚（放表格的脚注）;
+        不会影响表格的布局，只会对表格进行结构划分-->
+    <!--
+        1. border 表格外框的宽度
+        2. 表格的整体宽度
+        3. bgcolor 背景颜色
+        4. cellpadding 单元格与内容之间的空白
+        5. cellspacing 单元格之间的空隙
+        ... ...
+    -->
+
+    <table border="1" width="500" bgcolor="f2f2f2" cellpadding="3px" cellspacing="0">
+        <caption>含有各种用法的表格</caption>
+        <thead>
+            <tr bgcolor="d3e4bc">
+
+                <th rowspan="2">城市</th>
+                <!--colspan 跨列属性 ； rowspan 跨行属性-->
+                <th colspan="2" align="center">2014</th>
+                <th rowspan="2">2015</th>
+                <th rowspan="2">2016</th>
+            </tr>
+            <tr bgcolor="d3e4bc">
+                <td>上半年</td>
+                <td>下半年</td>
+            </tr>
+        </thead>
+        <tbody align="center" valign="bottom">
+        <!--align水平展示设置；valign垂直展示设置
+          可以在结构标签内设置，也可以在行标签内设置，也可以在单元格内设置-->
+            <tr>
+                <td bgcolor="b8cce4" >北京</td>
+                <td>8000</td>
+                <td>9000</td>
+                <td>10000</td>
+                <td>12000</td>
+            </tr>
+            <tr align="center" valign="bottom">
+                <td bgcolor="b8cce4">上海</td>
+                <td>6000</td>
+                <td>7000</td>
+                <td>8000</td>
+                <td>10000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr align="center" valign="bottom">
+                <td bgcolor="b8cce4">合计</td>
+                <td>7000</td>
+                <td>8000</td>
+                <td>9000</td>
+                <td>11000</td>
+            </tr>
+        </tfoot>
+    </table>
+
+<br>
+
+<p align="center">表格进行页面布局</p>
+    <table width="100%" bgcolor="f2f2f2">
+        <tr height = 80px>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+    </table>
+</body>
+</html>
