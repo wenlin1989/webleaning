@@ -10,10 +10,19 @@
     form标签表示"表单"
  1. 表单的所有内容需要在form标签之间，form只是指定了一个区域而已本身并不可见
  2. input用来插入表单元素  <input type="类型属性" name="名称" ... />
- 3. placeholder是在未输入前用于提示的文案随着输入而消失；value是默认初始化好的文本值，在重置后或者输入新内容时依然存在
- 4. button/submit/reset等按钮的value值可以用于显示按钮的名称
- 5. image的src指定图片的地址，图片的功能是"点击后可以提交"类似于submit
- 6. hidden隐藏域，是用户看不到的，value可以根据提交一起传给后端
+    2.1 placeholder是在未输入前用于提示的文案随着输入而消失；value是默认初始化好的文本值，在重置后或者输入新内容时依然存在
+    2.2 button/submit/reset等按钮的value值可以用于显示按钮的名称
+    2.3 image的src指定图片的地址，图片的功能是"点击后可以提交"类似于submit
+    2.4 hidden隐藏域，是用户看不到的，value可以根据提交一起传给后端
+ 3. select用来做"下拉菜单"
+    3.1 option表示基础元素
+    3.2 size表示菜单初始展示的元素个数，即从菜单变成了一个列表
+    3.3 multiple表示可复选
+    3.4 selected 表示默认选中
+    3.5 optgroup用来进行下拉菜单的分组
+ 4. textarea 多行文本域
+    4.1 placeholder  默认提示文字
+    4.2 rows 可显示行数  cols  可显示列数
 -->
 <H1 align="center">注册信息</H1>
 <hr color="#336699">  <!--水平线-->
@@ -67,7 +76,8 @@
             <td>
                 <!--
                     1.checked 表示默认选中 ； 通过name来进行单选框的元素进行标记
-                    2.radio中的value值用于提交后给后台传入到底选择的是什么内容-->
+                    2.radio中的value值用于提交后给后台传入到底选择的是什么内容
+                -->
                 男 <input type="radio" name="sex" value="man" checked>
                 女 <input type="radio" name="sex" value="woman">
             </td>
@@ -80,6 +90,65 @@
                 读书<input type="checkbox" name="interest" value="read" checked/>
                 跳舞<input type="checkbox" name="interest" value="dance"/>
                 唱歌<input type="checkbox" name="interest" value="sing"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                出生地：
+            </td>
+            <td>
+                <!--select下拉菜单，value才是最终传给后端的值-->
+                <select>
+                    <option value="xz">----请选择----</option>
+                    <option value="bj">北京</option>
+                    <option value="tj">天津</option>
+                    <option value="xa">西安</option>
+                    <option value="sh">上海</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                常驻地：
+            </td>
+            <td>
+                <!--size是初始化展示多少个元素,加上size下拉菜单变列表;multiple表示可以复选;selected表示默认选中 -->
+                <select name="city" size="3" multiple>
+                    <option value="bj" selected>北京</option>
+                    <option value="tj">天津</option>
+                    <option value="xa">西安</option>
+                    <option value="sh">上海</option>
+                    <option value="hz">杭州</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                工作地：
+            </td>
+            <td>
+                <!--size是初始化展示多少个元素,加上size下拉菜单变列表;multiple表示可以复选;selected表示默认选中 -->
+                <select>
+                    <optgroup label="第一部分">
+                        <option value="bj" selected>北京</option>
+                        <option value="tj">天津</option>
+                        <option value="xa">西安</option>
+                    </optgroup>
+                    <optgroup label="第二部分">
+                        <option value="sh">上海</option>
+                        <option value="hz">杭州</option>
+                        <option value="xz">西藏</option>
+                    </optgroup>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                简介
+            </td>
+            <td>
+                <textarea name="jj" rows="6" cols="50" placeholder="请输入个人介绍">
+                </textarea>
             </td>
         </tr>
         <tr>
