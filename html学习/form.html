@@ -23,10 +23,14 @@
  4. textarea 多行文本域
     4.1 placeholder  默认提示文字
     4.2 rows 可显示行数  cols  可显示列数
+ 5. 数据传输的标签
+    5.1 action  一个url  提交表单时将value传给后端什么地址
+    5.2 method get/post  默认为get（将表单数据放在url的后面，有发送信息的数量限制）,post方式不将表单的value值放在url中
+    5.3 target 在何处打开action的url
 -->
 <H1 align="center">注册信息</H1>
 <hr color="#336699">  <!--水平线-->
-<form>
+<form action="action.html" method="get" target="_blank">
     <table width="600px" bgcolor="#f2f2f2" align="center">
         <tr>
             <td align="right">
@@ -143,7 +147,7 @@
             </td>
         </tr>
         <tr>
-            <td>
+            <td align="right">
                 简介
             </td>
             <td>
